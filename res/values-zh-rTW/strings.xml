@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">童話故事有聲版</string>
+    <string name="update">更新</string>
+    <string name="back">返回</string>
+    <string name="previous">&lt; 上一頁</string>
+    <string name="next">下一頁 ></string>
+    <string name="load_title">讀取目錄</string>
+    <string name="load_msg">正在努力加載目錄</string>
+    <string name="age2">&lt;2歲</string>
+    <string name="age3">3歲</string>
+    <string name="age4">4歲</string>
+    <string name="age5">5歲</string>
+    <string name="age6">6歲</string>
+    <string name="age7">>7歲</string>
+    <string name="tip">提示</string>
+    <string name="tip1">網絡狀態不佳，只能使用部分離線數據，是否現在設置網絡？</string>
+    <string name="tip2">網絡不可用，是否現在設置網絡？</string>
+    <string name="tip3">請拖動選擇頁碼</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+    <string name="dlg_exit_tip">確定要退出嗎？</string>
+    <string name="dlg_exit">退出</string>
+    <string name="dlg_cancel">取消</string>
+    <string name="dlg_support">支持</string>
+    <string name="tip6">下載故事語音文件</string>
+    <string name="tip5">下載故事文本內容</string>
+    <string name="tip4">發送下載請求</string>
+    <string name="empty">清空所有緩存</string>
+    <string name="empty2">已清空所有緩存</string>
+    <string name="tip7">正在努力加載內容及語音</string>
+    <string name="exit">退出</string>
+    
+       <string name="app_name">ADLib</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+
+
+    <string name="other">更多</string>
+    <string name="menu_settings">推荐</string>
+    
+    <string name="ad_recomment">推荐</string>
+    <string name="ad_other">更多</string>
+</resources>

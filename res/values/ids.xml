@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="adView">false</item>
+    <item type="id" name="linearLayout1">false</item>
+    <item type="id" name="tv_app_title">false</item>
+    <item type="id" name="btn_update">false</item>
+    <item type="id" name="ll_nav">false</item>
+    <item type="id" name="lv_catelog">false</item>
+    <item type="id" name="ll_page">false</item>
+    <item type="id" name="btn_previous_page">false</item>
+    <item type="id" name="btn_nav_page">false</item>
+    <item type="id" name="btn_next_page">false</item>
+    <item type="id" name="ll_ad">false</item>
+    <item type="id" name="tv_name">false</item>
+    <item type="id" name="tv_tip">false</item>
+    <item type="id" name="iv_download">false</item>
+    <item type="id" name="btn_back">false</item>
+    <item type="id" name="scrollView1">false</item>
+    <item type="id" name="linearLayout2">false</item>
+    <item type="id" name="tv_content">false</item>
+    <item type="id" name="ll_buttons">false</item>
+    <item type="id" name="ib_play">false</item>
+    <item type="id" name="ib_stop">false</item>
+</resources>
