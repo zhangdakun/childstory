@@ -79,18 +79,31 @@ public class MainActivity extends ADbaseActivity
 //_L7:
         	switch ( message.what) {
 			case 4096:
+				try {
+					
+
+	            if(progressDialog != null ) {
+	            	progressDialog.dismiss();
+	            }
+
 	            progressDialog = new ProgressDialog(context);
 	            progressDialog.setTitle(0x7f040005);
 	            progressDialog.setMessage(getString(0x7f040006));
 	            progressDialog.setProgressStyle(0);
 	            progressDialog.show();
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
 				break;
 			case 4097:
 	            adapter = new MyAdapter(list, context, download);
 	            lvCatelog.setAdapter(adapter);
 	            btnNavPage.setText((new StringBuilder()).append(currentPage).append(" / ").append(pageCounts[currentSwitch]).toString());
-	            if(progressDialog != null && progressDialog.isShowing())
+	            if(progressDialog != null && progressDialog.isShowing()) {
 	                progressDialog.dismiss();
+	                progressDialog = null;
+	            }
 				break;
 				
 			case 8192:
@@ -98,13 +111,17 @@ public class MainActivity extends ADbaseActivity
 	            progressDialog.setProgress(i);
 				break;
 			case 8193:
-				if (progressDialog != null && progressDialog.isShowing())
+				if (progressDialog != null && progressDialog.isShowing()) {
 					progressDialog.dismiss();
+					progressDialog = null;
+				}
 				adapter.notifyDataSetChanged();
 				break;
 			case 8194:
 	            String s = (String)message.obj;
+	            if (progressDialog != null) {
 	            progressDialog.setMessage(s);
+	            }
 				break;
 
 			default:
@@ -136,6 +153,14 @@ public class MainActivity extends ADbaseActivity
         as[3] = "http://story.beva.com/23/tag/yin-pin/";
         as[4] = "http://story.beva.com/24/tag/yin-pin/";
         as[5] = "http://story.beva.com/25/tag/yin-pin/";
+        
+//        as[0] = "http://story.beva.com/20/search/%E5%84%BF%E6%AD%8C/";
+//        as[1] = "http://story.beva.com/21/search/%E5%84%BF%E6%AD%8C/";
+//        as[2] = "http://story.beva.com/22/search/%E5%84%BF%E6%AD%8C/";
+//        as[3] = "http://story.beva.com/23/search/%E5%84%BF%E6%AD%8C/";
+//        as[4] = "http://story.beva.com/24/search/%E5%84%BF%E6%AD%8C/";
+//        as[5] = "http://story.beva.com/25/search/%E5%84%BF%E6%AD%8C/";
+        
         catelogUrls = as;
         int ai[] = new int[6];
         ai[0] = 20;
@@ -144,6 +169,14 @@ public class MainActivity extends ADbaseActivity
         ai[3] = 26;
         ai[4] = 25;
         ai[5] = 24;
+        
+//        ai[0] = 4;
+//        ai[1] = 3;
+//        ai[2] = 3;
+//        ai[3] = 2;
+//        ai[4] = 2;
+//        ai[5] = 1;
+        
         pageCounts = ai;
         currentSwitch = 0;
         currentPage = 1;
@@ -151,6 +184,9 @@ public class MainActivity extends ADbaseActivity
 
             public void download(final String nextUrl, final String fileName)
             {
+            	try{
+                if(progressDialog != null)
+                  progressDialog.dismiss();
                 progressDialog = new ProgressDialog(MainActivity.this);
                 progressDialog.setTitle(0x7f04000d);
                 progressDialog.setMessage(getString(0x7f040019));
@@ -158,6 +194,9 @@ public class MainActivity extends ADbaseActivity
                 progressDialog.setProgress(0);
                 progressDialog.setCanceledOnTouchOutside(false);
                 progressDialog.show();
+            	} catch(Exception e) {
+            		e.printStackTrace();
+            	}
                 (new Thread(new Runnable() {
 
                     public void run()
@@ -304,6 +343,15 @@ public class MainActivity extends ADbaseActivity
                     currentSwitch = ((Integer)view.getTag()).intValue();
                     showNav();
                     currentPage = 1;
+                    // lieb add
+                    btnNavPage.setText((new StringBuilder()).append(currentPage).append(" / ").
+                    		append(pageCounts[currentSwitch]).toString());
+                    
+                    btnNext.setEnabled(true);
+
+                    btnPrevious.setEnabled(false);
+                    
+                    // end lieb
                     doTask();
                 }
 

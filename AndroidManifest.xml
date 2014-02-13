@@ -3,7 +3,7 @@
     package="com.android.mychildstory"
     android:installLocation="preferExternal"
     android:versionCode="1"
-    android:versionName="4.2.12" >
+    android:versionName="4.2.13" >
 
     <supports-screens
         android:anyDensity="true"

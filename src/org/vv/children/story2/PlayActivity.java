@@ -63,17 +63,27 @@ public class PlayActivity extends ADbaseActivity
 
         	switch(message.what) {
 	        	case 4096:
+	        	try{
+		            if(progressDialog != null ) {
+		            	progressDialog.dismiss();
+		            }	
 	              progressDialog = new ProgressDialog(context);
 	              progressDialog.setTitle(0x7f04000d);
 	              progressDialog.setMessage(getString(0x7f04001c));
 	              progressDialog.setProgressStyle(0);
 	              progressDialog.show();
+	        	}catch(Exception e) {
+	        		e.printStackTrace();
+	        	}
 	        		break;
 	        	case 4097:
 	              ibPlay.setEnabled(true);
 	              ibStop.setEnabled(true);
 	              tvContent.setText(Html.fromHtml(content));
+	              if(progressDialog != null ) {
 	              progressDialog.dismiss();
+	              progressDialog = null;
+	              }
 	        		break;
         	}
 			} catch (Exception e) {

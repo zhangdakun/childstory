@@ -12,6 +12,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import android.util.Log;
+
 public class Fetch
 {
 
@@ -155,6 +157,7 @@ public class Fetch
     {
         Document document = null;
         Document document1;
+        Log.d("Fetch", "getMP3URL, "+s);
 		try {
 			document1 = Jsoup.connect(s).userAgent("Mozilla").timeout(10000).get();
 		} catch (IOException e) {
